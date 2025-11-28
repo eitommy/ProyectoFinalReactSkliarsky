@@ -9,7 +9,7 @@ export default function CartItem({ item }) {
         <h4>{item.title}</h4>
         <p>Talle: {item.size}</p>
 
-        {/* CONTROLES DE CANTIDAD */}
+        {}
         <div className="qty-controls">
           <button onClick={() => decreaseQty(item.id)}>-</button>
           <span>{item.quantity}</span>
@@ -20,7 +20,7 @@ export default function CartItem({ item }) {
         <p>Subtotal: ${item.price * item.quantity}</p>
       </div>
 
-      {/* ELIMINAR */}
+      { }
       <button className="btn btn-secondary" onClick={() => removeItem(item.id)}>
         Eliminar
       </button>

@@ -7,7 +7,6 @@ export default function ItemDetail({ item }) {
   const { addItem, cart } = useCart();
   const [addedQty, setAddedQty] = useState(0);
 
-  // ✔ Cuando cambia el item, resetear el estado (EVITA BUG DE 155)
   useEffect(() => {
     setAddedQty(0);
   }, [item.id]);
@@ -31,7 +30,6 @@ export default function ItemDetail({ item }) {
         <p><strong>Categoría:</strong> {item.category}</p>
         <p><strong>Talle:</strong> {item.size}</p>
 
-        {/* ✔ Mostrar stock REAL (no el del carrito) */}
         <p><strong>Stock disponible:</strong> {item.stock}</p>
 
         {item.stock === 0 && (

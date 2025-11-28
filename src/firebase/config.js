@@ -11,7 +11,6 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
-// 🔥 MOSTRAR CONFIG REAL
 console.log("🔥 CONFIG ACTUAL:", firebaseConfig);
 
 const app = initializeApp(firebaseConfig);

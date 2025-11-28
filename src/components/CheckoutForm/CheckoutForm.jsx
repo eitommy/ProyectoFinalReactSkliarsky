@@ -33,11 +33,9 @@ export default function CheckoutForm() {
       const ordersRef = collection(db, "orders");
       const docRef = await addDoc(ordersRef, order);
 
-      // 🔥 Guardamos solo ID corto y bonito
       const niceId = docRef.id.slice(0, 6).toUpperCase();
       setOrderId(niceId);
 
-      // 🔥 Vaciado silencioso REAL
       clearCartSilent();
     } catch (error) {
       console.error("Error al crear la orden:", error);
@@ -46,7 +44,6 @@ export default function CheckoutForm() {
     }
   }
 
-  // 🟢 Si ya se generó la orden
   if (!cart.length && orderId) {
     return (
       <section>
@@ -57,7 +54,6 @@ export default function CheckoutForm() {
     );
   }
 
-  // 🟡 Si no hay carrito y no hay orden
   if (!cart.length && !orderId) {
     return (
       <section>
@@ -66,7 +62,6 @@ export default function CheckoutForm() {
     );
   }
 
-  // 🟢 FORMULARIO NORMAL
   return (
     <section>
       <h2>Checkout</h2>
